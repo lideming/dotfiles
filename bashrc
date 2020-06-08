@@ -9,7 +9,11 @@ function sudokwrite {
 }
 
 function gcc-run {
-	gcc $1 -o $1.obj && ./$1.obj
+  output="$1.obj"
+  if [ -d bin ]; then
+    output="bin/$output"
+  fi
+	gcc $1 -o "$output" && "./$output"
 }
 
 function mkcd {
