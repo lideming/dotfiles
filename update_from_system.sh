@@ -12,3 +12,5 @@ cp ~/.config/swaylock/config config/swaylock/
 
 cp ~/.config/fish/conf.d/bashrc.fish ./
 
+mkdir -p bin
+cp /usr/bin/startsway bin/
