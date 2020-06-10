@@ -73,10 +73,12 @@
     },
     "cpu": {
         "format": "{usage}%",
-        "tooltip": true
+        "tooltip": true,
+        "interval": 5
     },
     "memory": {
-        "format": "{used:.1f} GB ({}%)"
+        "format": "{used:.1f} GB ({}%)",
+        "interval": 5
     },
     "temperature": {
         // "thermal-zone": 2,
