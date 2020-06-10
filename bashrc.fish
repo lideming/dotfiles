@@ -1,6 +1,16 @@
+# The fish version of bashrc in my dotfiles.git
+# Place this file in ~/.config/fish/conf.d/
+
+function load-bashrc
+	source ~/.config/fish/conf.d/bashrc.fish
+end
 
 function sudokwrite
 	env EDITOR=kwrite sudoedit $argv
+end
+
+function sudocode
+	env EDITOR='code -w' sudoedit $argv
 end
 
 function gcc-run
@@ -9,6 +19,10 @@ function gcc-run
     set output "bin/$output"
   end
 	gcc $1 -o "$output" && "./$output"
+end
+
+function tcc-run
+  tcc -run "$1"
 end
 
 function mkcd

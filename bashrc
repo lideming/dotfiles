@@ -8,6 +8,10 @@ function sudokwrite {
 	EDITOR=kwrite sudoedit $*
 }
 
+function sudocode {
+	EDITOR='code -w' sudoedit $*
+}
+
 function gcc-run {
   output="$1.obj"
   if [ -d bin ]; then

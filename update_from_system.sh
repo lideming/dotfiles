@@ -9,3 +9,6 @@ cp /etc/xdg/waybar/{config,style.css} config/waybar/
 
 mkdir -p config/swaylock
 cp ~/.config/swaylock/config config/swaylock/
+
+cp ~/.config/fish/conf.d/bashrc.fish ./
+
