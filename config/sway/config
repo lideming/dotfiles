@@ -10,7 +10,7 @@ set $lock swaylock -f -F
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu dmenu_path | rofi -dmenu | xargs swaymsg exec --
 
-font pango:"Sans Noto" 10
+font pango:"Noto Sans" 10
 
 # handle monitor events
 exec kanshi
@@ -229,7 +229,8 @@ mode $dangmode {
 }
 bindsym $mod+Shift+e mode $dangmode
 
-for_window [title="."] title_format "<b>%title</b> (%app_id/%class)"
+for_window [title="."] title_format "<b>%title</b> ゜%app_id"
+for_window [class="."] title_format "<b>%title</b> ゜X/%class"
 
 for_window [app_id="telegramdesktop|pavucontrol|org\.kde\.kdeconnect\-indicator\
 org\.kde\.drkonqi"] floating enable
@@ -240,6 +241,7 @@ for_window [class="Code" instance="code" tiling]\
 
 for_window [app_id="firefox" tiling]\
     move container to workspace 3 ,\
+    border none ,\
     urgent enable
 
 exec kdeconnect-indicator
