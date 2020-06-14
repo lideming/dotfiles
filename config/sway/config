@@ -8,7 +8,8 @@ set $right l
 set $term konsole
 set $lock swaylock -f -F
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu dmenu_path | rofi -dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | rofi -dmenu | xargs swaymsg exec --
+set $menu krunner
 
 font pango:"Noto Sans" 10
 
@@ -215,9 +216,9 @@ bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%
 set $vmmode "Super key passthough ($mod+M again to quit)"
 
 mode $vmmode {
-	bindsym $mod+m mode default
+	bindsym $mod+m mode default, exec notify-send "Leaving key passthough mode" -t 1000
 }
-bindsym $mod+m mode $vmmode
+bindsym $mod+m mode $vmmode, exec notify-send "Entering key passthough mode" -t 1000
 
 set $dangmode "$mod+Shift+L: logout"
 mode $dangmode {
@@ -244,9 +245,11 @@ for_window [app_id="firefox" tiling]\
     border none ,\
     urgent enable
 
-exec kdeconnect-indicator
+exec mako
 
-exec $term
+exec kdeinit5 $term kdeconnect-indicator
+
+exec krunner -d
 
 exec ~/.config/sway/script.py
 
