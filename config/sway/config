@@ -200,6 +200,11 @@ input type:pointer {
 	accel_profile flat
 }
 
+input "2:10:TPPS/2_IBM_TrackPoint" {
+    accel_profile flat
+    pointer_accel .7
+}
+
 include /etc/sway/config.d/*
 
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -213,7 +218,7 @@ bindsym Print exec grim -t jpeg ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg
 
 bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg
 
-set $vmmode "Super key passthough ($mod+M again to quit)"
+set $vmmode "Key passthough ($mod+M again to quit)"
 
 mode $vmmode {
 	bindsym $mod+m mode default, exec notify-send "Leaving key passthough mode" -t 1000
@@ -234,7 +239,7 @@ for_window [title="."] title_format "<b>%title</b> ゜%app_id"
 for_window [class="."] title_format "<b>%title</b> ゜X/%class"
 
 for_window [app_id="telegramdesktop|pavucontrol|org\.kde\.kdeconnect\-indicator\
-org\.kde\.drkonqi"] floating enable
+|org\.kde\.drkonqi"] floating enable
 
 for_window [class="Code" instance="code" tiling]\
     opacity .85 ,\
