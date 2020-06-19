@@ -40,6 +40,8 @@ alias lla='la -l'
 
 alias lsblk='lsblk -o +fstype,label,uuid'
 
+alias dog=cat
+
 function set-dotnet-vars
   set DOTNET_BASE '(dotnet --info | grep "Base Path" | awk '{print $3}')'
   echo "DOTNET_BASE: $DOTNET_BASE"
