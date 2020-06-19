@@ -239,7 +239,7 @@ for_window [title="."] title_format "<b>%title</b> ゜%app_id"
 for_window [class="."] title_format "<b>%title</b> ゜X/%class"
 
 for_window [app_id="telegramdesktop|pavucontrol|org\.kde\.kdeconnect\-indicator\
-|org\.kde\.drkonqi"] floating enable
+|org\.kde\.drkonqi|nm-tray"] floating enable
 
 for_window [class="Code" instance="code" tiling]\
     opacity .85 ,\
@@ -252,7 +252,7 @@ for_window [app_id="firefox" tiling]\
 
 exec mako
 
-exec kdeinit5 $term kdeconnect-indicator
+exec kdeinit5 $term kdeconnect-indicator nm-tray /usr/lib/polkit-kde-authentication-agent-1
 
 exec krunner -d
 

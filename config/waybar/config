@@ -80,6 +80,10 @@
     },
     "memory": {
         "format": "{used:.1f} GB ({}%)",
+        "states": {
+            "warning": 75,
+            "critical": 90
+        },
         "interval": 5
     },
     "temperature": {
