@@ -1,11 +1,10 @@
 #!/bin/sh
 
 mkdir -p config/sway
-cp /etc/sway/config config/sway/
-cp /etc/i3status.conf config/
+cp ~/.config/sway/{config,script.py} config/sway/
 
 mkdir -p config/waybar
-cp /etc/xdg/waybar/{config,style.css} config/waybar/
+cp ~/.config/waybar/{config,style.css} config/waybar/
 
 mkdir -p config/swaylock
 cp ~/.config/swaylock/config config/swaylock/
