@@ -205,6 +205,8 @@ input "2:10:TPPS/2_IBM_TrackPoint" {
     pointer_accel .7
 }
 
+input 10007:20500:Mi_Silent_Mouse pointer_accel "-0.4"
+
 include /etc/sway/config.d/*
 
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%

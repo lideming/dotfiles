@@ -79,7 +79,7 @@
         "interval": 5
     },
     "memory": {
-        "format": "{used:.1f} GB ({}%)",
+        "format": "{avail:.1f} GB ({}%)",
         "states": {
             "warning": 75,
             "critical": 90
