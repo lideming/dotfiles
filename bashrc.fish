@@ -43,13 +43,13 @@ alias lsblk='lsblk -o +fstype,label,uuid'
 alias dog=cat
 
 function set-dotnet-vars
-  set DOTNET_BASE '(dotnet --info | grep "Base Path" | awk '{print $3}')'
+  set DOTNET_BASE (dotnet --info | grep 'Base Path' | awk '{print $3}')
   echo "DOTNET_BASE: $DOTNET_BASE"
   
-  set DOTNET_ROOT '(echo $DOTNET_BASE | sed -E "s/^(.*)(\/sdk\/[^\/]+\/)$/\1/")'
+  set DOTNET_ROOT (echo $DOTNET_BASE | sed -E 's/^(.*)(\/sdk\/[^\/]+\/)$/\1/')
   echo "DOTNET_ROOT: $DOTNET_ROOT"
   
-  export MSBuildSDKsPath={$DOTNET_BASE}Sdks/ 
+  export MSBuildSDKsPath=$DOTNET_BASE"Sdks/"
   export DOTNET_ROOT=$DOTNET_ROOT
-  export PATH=$DOTNET_ROOT:$PATH
+  export PATH="$DOTNET_ROOT:$PATH"
 end
