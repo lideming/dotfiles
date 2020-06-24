@@ -14,20 +14,20 @@ function sudocode
 end
 
 function gcc-run
-  set output "$1.obj"
-  if [ -d bin ]; then
+  set output "$argv[1].obj"
+  if test -d bin
     set output "bin/$output"
   end
-	gcc $1 -o "$output" && "./$output"
+	gcc "$argv[1]" -o "$output" && "./$output"
 end
 
 function tcc-run
-  tcc -run "$1"
+  tcc -run "$argv[1]"
 end
 
 function mkcd
-	mkdir "$1"
-	cd "$1"
+	mkdir "$argv[1]"
+	cd "$argv[1]"
 end
 
 alias cl='clear'
