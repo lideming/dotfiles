@@ -2,7 +2,7 @@
 // @name         LyricsCopy
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Help you copy lyrics
+// @description  Copy lyrics from lyrics website
 // @author       Li Deming
 // @match        https://utaten.com/lyric/*
 // @grant        none
@@ -13,6 +13,15 @@
     function getUtaten() {
         var lyricsBox = document.querySelector('.hiragana');
         var r = '';
+        var lyricWork = document.querySelector('.lyricWork');
+        if (lyricWork) {
+            for (var child = lyricWork.firstElementChild; child; child = child.nextElementSibling) {
+                r += child.textContent + ': ';
+                child = child.nextElementSibling;
+                r += child.textContent + '\n';
+            }
+            r += '\n';
+        }
         for (var x = lyricsBox.firstChild; x != null; x = x.nextSibling) {
             if (x.nodeType == Node.TEXT_NODE) {
                 r += x.textContent.replace(/(^\s+)|(\s+$)/g, '');
