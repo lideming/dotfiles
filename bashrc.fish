@@ -1,6 +1,9 @@
 # The fish version of bashrc in my dotfiles.git
 # Place this file in ~/.config/fish/conf.d/
 
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$PATH:$HOME/bin:$DENO_INSTALL/bin"
+
 function load-bashrc
 	source ~/.config/fish/conf.d/bashrc.fish
 end

@@ -6,7 +6,8 @@ import time, os, subprocess
 sway = Connection()
 
 def show_notification(text, timeout=1000):
-    subprocess.Popen(['notify-send', text, '-t', str(timeout)]);
+    proc = subprocess.Popen(['notify-send', text, '-t', str(timeout)])
+    proc.wait(2)
 
 def on_ws_init(_, e: events.WorkspaceEvent):
     print('ws init', e.current.name)
