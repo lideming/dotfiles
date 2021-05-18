@@ -13,4 +13,4 @@ mkdir -p ~/.config/fish/conf.d
 cp bashrc.fish  ~/.config/fish/conf.d/
 
 mkdir -p ~/bin
-cp bin/startsway ~/bin/
+cp bin/* ~/bin/

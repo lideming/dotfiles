@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# It was used on Thinkpad X230 with an i5-3200M processor
+FREQ_DEFAULT=3300Mhz
+FREQ_SAVING=2200Mhz
+
+function setFreq {
+	echo "Setting CPU frequency to $1..."
+	sudo cpupower frequency-set -u "$1"
+}
+
+
+if [ "$1" == "on" ]; then
+	setFreq $FREQ_SAVING
+elif [  "$1" == "off" ]; then
+	setFreq $FREQ_DEFAULT
+else
+	echo "Usage: powersaving (on|off)"
+fi
