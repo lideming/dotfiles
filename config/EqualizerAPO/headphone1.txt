@@ -1,6 +1,6 @@
-Preamp: -16.2 dB
-Filter: ON LS 12 dB Fc 232.81 Hz Gain 5 dB
-Filter: ON LS 12 dB Fc 63.23 Hz Gain 9 dB
+Preamp: -14 dB
+Filter: ON LS Fc 232.81 Hz Gain 5 dB
+Filter: ON LS 12 dB Fc 61.83 Hz Gain 9 dB
 LoudnessCorrection: State 1 ReferenceLevel -3 ReferenceOffset 18 Attenuation 0.3
 # GraphicEQ: 772.224 0; 1020.06 -1.6; 1548.9 -2.3; 1951.7 -0.7; 4000 0; 7033.9 5.3; 10058.8 0
 # Include: mono.txt
